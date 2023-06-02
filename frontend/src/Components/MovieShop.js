@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import './MovieShop.css';
+
 
 const MovieShop = () => {
   const [movies, setMovies] = useState([]);
@@ -103,7 +105,9 @@ const MovieShop = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
+       <div className="bg-gray-100 p-4 mb-6">
       <h1 className="text-3xl font-bold mb-6">Movie Shop</h1>
+      </div>
       <form className="mb-8" onSubmit={handleAddMovie}>
         <h2 className="text-lg font-bold mb-4">Add a Movie</h2>
         <div className="mb-4">
@@ -178,7 +182,7 @@ const MovieShop = () => {
         </div>
         <button
           type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded font-bold"
+          className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded font-bold"
         >
           Add Movie
         </button>
@@ -192,13 +196,13 @@ const MovieShop = () => {
             <p className="text-sm">{movie.description}</p>
             <div className="flex mt-4">
               <button
-                className="bg-green-500 text-white px-4 py-2 rounded font-bold"
-                onClick={() => setUpdatedMovie(movie)}
+                className="edit-button"
+                onClick={() => handleUpdateMovie(movie)}
               >
                 Edit
               </button>
               <button
-                className="bg-red-500 text-white px-4 py-2 rounded font-bold ml-2"
+                className="delete-button"
                 onClick={() => handleDeleteMovie(movie.id)}
               >
                 Delete
