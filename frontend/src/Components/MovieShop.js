@@ -20,7 +20,7 @@ const MovieShop = () => {
 
   const fetchMovies = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:3000/movies');
+      const response = await fetch('https://grandeza-films.onrender.com/movies');
       if (!response.ok) {
         throw new Error('Error fetching movies');
       }
@@ -40,7 +40,7 @@ const MovieShop = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3000/movies', {
+      const response = await fetch('https://grandeza-films.onrender.com/movies', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -67,7 +67,7 @@ const MovieShop = () => {
 
   const handleUpdateMovie = async (movieId) => {
     try {
-      const response = await fetch(`http://127.0.0.1:3000/movies/${movieId}`, {
+      const response = await fetch(`https://grandeza-films.onrender.com/movies/${movieId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -89,7 +89,7 @@ const MovieShop = () => {
 
   const handleDeleteMovie = async (movieId) => {
     try {
-      const response = await fetch(`http://127.0.0.1:3000/movies/${movieId}`, {
+      const response = await fetch(`https://grandeza-films.onrender.com/movies/${movieId}`, {
         method: 'DELETE',
       });
       if (!response.ok) {
